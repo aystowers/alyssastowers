@@ -240,7 +240,7 @@ overflow-clip-margin: content-box;
 }
 
 #div15 .featured_image:hover{
-      cursor: url(img/cursors/logo_wir.svg), auto;
+      cursor: url(img/cursors/logo_koala.svg), auto;
 }
 
 .featured_image:hover {
@@ -479,7 +479,7 @@ overflow-clip-margin: content-box;
 /* HOVER STATES AND LINK BEHAVIOR */
 
 #div1 .featured_image:hover{
-      cursor: url(img/cursors/logo_op.svg), auto;
+      cursor: url(img/cursors/logo_warby.svg), auto;
 }
 
 #div3 .featured_image:hover{
@@ -487,7 +487,7 @@ overflow-clip-margin: content-box;
 }
 
 #div5 .featured_image:hover{
-      cursor: url(img/cursors/logo_koala.svg), auto;
+      cursor: url(img/cursors/logo_op.svg), auto;
 }
 
 #div7 .featured_image:hover{
