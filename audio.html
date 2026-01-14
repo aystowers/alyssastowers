@@ -40,14 +40,46 @@
 
         <div class="text">
             <p>Sound & Curation<br>
+
+<div class="description">
+        Ongoing music curation through live sets and a monthly radio show. Below is an archive of past sets and mixes.
+        <br>Next radio show: Sunday, <span id="dynamic-date"></span>
+</div>
+            
         </div>
 
 
+<script>
+  function getActiveSunday(startDate) {
+    const MS_IN_DAY = 24 * 60 * 60 * 1000;
+    const FOUR_WEEKS = 28;
 
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    let current = new Date(startDate);
+    current.setHours(0, 0, 0, 0);
+
+    while (current < today) {
+      current = new Date(current.getTime() + FOUR_WEEKS * MS_IN_DAY);
+    }
+
+    return current;
+  }
+
+  const startSunday = new Date('2024-01-17'); // Sunday Jan 17
+  const activeSunday = getActiveSunday(startSunday);
+
+  const options = { weekday: 'long', month: 'long', day: 'numeric' };
+  document.getElementById('dynamic-date').textContent =
+    activeSunday.toLocaleDateString('en-US', options);
+</script>
+        
 <!--Image Section
         
         
-        Ongoing music curationn through live sets and a monthly radio show.
+        Ongoing music curation through live sets and a monthly radio show. Below is an archive of past sets and mixes.
+        <br>Next radio show: Sunday, <span id="dynamic-date"></span>
         
     -->  
 
