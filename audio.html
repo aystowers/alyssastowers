@@ -73,8 +73,9 @@
   }
 
   // ✅ CORRECT anchor date
-  const startSunday = new Date('2026-01-18'); // Sunday, Jan 18 2026
+  const startSunday = new Date('2026-01-18T12:00:00'); // Sunday, Jan 18 2026
   const activeSunday = getActiveSunday(startSunday);
+    
 
   const weekday = activeSunday.toLocaleDateString('en-US', { weekday: 'long' });
   const month = activeSunday.toLocaleDateString('en-US', { month: 'long' });
