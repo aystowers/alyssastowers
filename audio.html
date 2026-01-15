@@ -82,6 +82,12 @@
   document.getElementById('dynamic-date').textContent =
     `${weekday}, ${month} ${day}`;
 </script>
+
+<script>
+  $(window).scroll(function(){
+    $("#dynamic-date").css("opacity", 1);
+  });
+</script>
         
 <!--Image Section
         
