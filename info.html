@@ -18,6 +18,8 @@
     <body>
 
 
+
+
 <script type="text/javascript">
 $(document).ready(function() {
     $("body").css("display", "none");
@@ -43,6 +45,54 @@ $(document).ready(function() {
           });
     </script>
 
+
+    
+<script>
+  function getOrdinal(n) {
+    if (n > 3 && n < 21) return n + 'th';
+    switch (n % 10) {
+      case 1: return n + 'st';
+      case 2: return n + 'nd';
+      case 3: return n + 'rd';
+      default: return n + 'th';
+    }
+  }
+
+  function getActiveSunday(startDate) {
+    const MS_IN_DAY = 24 * 60 * 60 * 1000;
+    const FOUR_WEEKS = 28;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    let current = new Date(startDate);
+    current.setHours(0, 0, 0, 0);
+
+    while (current < today) {
+      current = new Date(current.getTime() + FOUR_WEEKS * MS_IN_DAY);
+    }
+
+    return current;
+  }
+
+  // ✅ CORRECT anchor date
+  const startSunday = new Date('2026-01-18T12:00:00'); // Sunday, Jan 18 2026
+  const activeSunday = getActiveSunday(startSunday);
+    
+
+  const weekday = activeSunday.toLocaleDateString('en-US', { weekday: 'long' });
+  const month = activeSunday.toLocaleDateString('en-US', { month: 'long' });
+  const day = getOrdinal(activeSunday.getDate());
+
+  document.getElementById('dynamic-date').textContent =
+    `${weekday}, ${month} ${day}`;
+</script>
+
+<script>
+  $(window).scroll(function(){
+    $("#dynamic-date").css("opacity", 1);
+  });
+</script>
 
 
 
@@ -143,7 +193,8 @@ $(document).ready(function() {
 
 
     <div id="div8">
-        <p>Contact: aystowers@gmail.com </p>
+        <p>Contact: aystowers@gmail.com<br>
+            Next radio show: <span id="dynamic-date">Sunday, January 18th</span></span></p></div>
 
     </div>
 
