@@ -1,0 +1,190 @@
+<html>
+
+    <head>
+        <title>Table Service</title>
+        <meta name="title" content="TEMP">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 minimal-ui">
+
+        <link rel="stylesheet" href="style_2.css"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pinyon+Script&display=swap" rel="stylesheet">
+        <link rel="icon" href="images/icon.png">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+
+  <!-- NAV -->
+
+  <div id="nav">
+    <div class="nav-left">
+      <a href="#">Shop</a>
+      <a href="#">Sip</a>
+      <a href="#">Snack</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="#">About</a>
+      <a href="#">Archive</a> ⟡
+    </div>
+  </div>
+
+
+
+  <!-- HEADER -->
+
+  <div id="name">
+    Table Service
+  </div>
+
+ 
+
+  <!-- CONTENT -->
+
+
+
+  <div class="header_tile">
+    <img src="imgs/header.jpg" data-images="img/ts.jpg,img/doily.jpg" />
+  </div>
+
+</div>
+
+
+  <!-- SUBHEADER -->
+
+<div id="subheader">
+  We are a shop and table service café sourcing vintage milk glass, table objects, and cookbooks. Drinks and a rotating selection of desserts are served at the table; service is dine-in only.
+</div>
+
+  <!-- CONTENT -->
+
+<div class="page-content grid">
+
+  <div class="tile">
+    <img src="imgs/white_1.png" data-images="img/ts.jpg,img/doily.jpg" />
+      <div class="caption">
+        <span>Milk Glass</span>
+        <span>01</span>
+      </div>
+  </div>
+
+  <div class="tile">
+    <img src="imgs/jadeite_1.jpg" data-images="img/jade2.jpg,img/jade3.jpg" />
+      <div class="caption">
+        <span>Jadeite</span>
+        <span>01</span>
+      </div>
+  </div>
+
+  <div class="tile">
+    <img src="imgs/delphite_1.png" data-images="img/ts3_alt1.jpg,img/ts3_alt2.jpg" />
+      <div class="caption">
+        <span>Delphite</span>
+        <span>01</span>
+      </div>
+  </div>
+
+  <div class="tile">
+    <img src="imgs/misc_1.png" data-images="img/ts4_alt1.jpg,img/ts4_alt2.jpg" />
+      <div class="caption">
+        <span>Vintage</span>
+        <span>01</span>
+      </div> 
+  </div>
+
+</div>
+
+  <!-- FOOTER -->
+
+<div id="footer">
+
+  <!-- LEFT -->
+  <div class="footer-left">
+
+    <div class="footer-block">
+      <div class="footer-label">REACH OUT</div>
+      <div class="footer-text">tableservicenyc@gmail.com</div>
+    </div>
+
+    <div class="footer-block">
+      <div class="footer-label">SUBSCRIBE TO NEWSLETTER</div>
+
+      <form class="newsletter">
+        <input type="email" placeholder="Your email" />
+        <button type="submit">ENTER</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="footer-right">
+
+    <div class="footer-col">
+      <div class="footer-label">LOCATION</div>
+      <div class="footer-text">
+        
+        New York, NY
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-label">INFO</div>
+      <a href="#">Contact</a>
+      <a href="#">FAQ</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-label">SOCIALS</div>
+      <a href="#">Instagram</a>
+      <a href="#">Are.na</a>
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- JS (IMPORTANT FIX: runs after DOM loads) -->
+<script>
+const nameEl = document.getElementById("name");
+const navEl = document.getElementById("nav");
+
+const maxScroll = 200;
+
+function getTargetOffset() {
+  const navRect = navEl.getBoundingClientRect();
+  return navRect.top + navRect.height / 2;
+}
+
+window.addEventListener("scroll", () => {
+  const progress = Math.min(window.scrollY, maxScroll) / maxScroll;
+
+  const scale = 1 - (0.84 * progress);
+
+  const targetY = getTargetOffset();
+  const startY = window.innerHeight / 2;
+
+  const moveY = (targetY - startY) * progress;
+
+  nameEl.style.transform =
+    `translateY(${moveY}px) scale(${scale})`;
+});
+</script>
+
+</body>
+
+</html>
