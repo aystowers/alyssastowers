@@ -10,47 +10,68 @@
         <link rel="stylesheet" href="style_2.css"/>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pinyon+Script&display=swap" rel="stylesheet">
+        
         <link rel="icon" href="images/icon.png">
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pinyon+Script&display=swap" rel="stylesheet">
+
     </head>
 
 <body>
 
-  <!-- NAV -->
+<!-- NAV -->
 
-  <div id="nav">
-    <div class="nav-left">
-      <a href="#">Shop</a>
-      <a href="#">Sip</a>
-      <a href="#">Snack</a>
+
+<!-- NAV -->
+<div id="nav">
+  <div class="nav-left">
+    <div class="nav-item">
+      <a href="#" class="nav-trigger">Shop</a>
+      <div class="dropdown">
+        <a href="#">Milk Glass</a>
+        <a href="#">Objects</a>
+        <a href="#">Linens</a>
+        <a href="#">Books</a>
+      </div>
     </div>
 
-    <div class="nav-right">
-      <a href="#">About</a>
-      <a href="#">Archive</a> ⟡
+    <div class="nav-item">
+      <a href="#" class="nav-trigger">Sip</a>
+             <!--   <div class="dropdown">
+        <a href="#">Coffee</a>
+        <a href="#">Tea</a>
+      </div> -->
+    </div>
+
+    <div class="nav-item">
+      <a href="#" class="nav-trigger">Snack</a>
+       <!--     
+        <div class="dropdown">
+        <a href="#">Pastries</a>
+        <a href="#">Savory</a>
+        <a href="#">Sweets</a>  
+      </div>-->
     </div>
   </div>
 
-
-
-  <!-- HEADER -->
-
-  <div id="name">
-    Table Service
+  <div class="nav-right">
+    <a href="#">About</a>
+    <a href="#">Archive</a> ⟡
   </div>
+</div>
 
+<!-- HEADER -->
+<div id="name">
+  <a href="table_service.html">Table Service</a>
+</div>
  
 
   <!-- CONTENT -->
@@ -108,81 +129,177 @@
 
 </div>
 
+<br>
+
   <!-- FOOTER -->
 
-<div id="footer">
 
-  <!-- LEFT -->
-  <div class="footer-left">
+<footer class="mast-like-footer">
+  <div class="mast-like-footer__inner">
+    <div class="mast-like-footer__grid">
+      <div class="mast-like-footer__hours">HOURS: 12-8pm, Saturdays & Sundays</div>
 
-    <div class="footer-block">
-      <div class="footer-label">REACH OUT</div>
-      <div class="footer-text">tableservicenyc@gmail.com</div>
-    </div>
 
-    <div class="footer-block">
-      <div class="footer-label">SUBSCRIBE TO NEWSLETTER</div>
-
-      <form class="newsletter">
-        <input type="email" placeholder="Your email" />
-        <button type="submit">ENTER</button>
-      </form>
-    </div>
-
-  </div>
-
-  <!-- RIGHT -->
-  <div class="footer-right">
-
-    <div class="footer-col">
-      <div class="footer-label">LOCATION</div>
-      <div class="footer-text">
+      <div class="mast-like-footer__contact">
+        <div>table service</div>
+        <div>775 Woodward Avenue</div>
+        <div>Ridgewood, NY, 11385</div>
         
-        New York, NY
+       <!-- <div><a href="tel:+17202511802">(720) 251-1802</a></div> 
+            <div><a href="mailto:info@mastbooks.com">tableservicenyc@gmail.com</a></div>
+        -->
+     
       </div>
-    </div>
 
-    <div class="footer-col">
-      <div class="footer-label">INFO</div>
-      <a href="#">Contact</a>
-      <a href="#">FAQ</a>
-    </div>
+      <nav class="mast-like-footer__nav" aria-label="Footer navigation">
+        <a href="/about">ABOUT</a>
+        <a href="mailto:tableservicenyc@gmail.com">CONTACT</a>
+        <a href="/gift-certificate">GIFT CERTIFICATES</a>
+        <a href="/shipping-returns">SHIPPING/RETURNS</a>
+        <a href="/sell-your-books">SELL YOUR MILK GLASS</a>
+        <a href="/events">EVENTS</a>
+      </nav>
 
-    <div class="footer-col">
-      <div class="footer-label">SOCIALS</div>
-      <a href="#">Instagram</a>
-      <a href="#">Are.na</a>
-    </div>
+      <div class="mast-like-footer__right">     
+        <a href="https://www.instagram.com/tableservicenyc/?hl=en" target="_blank">INSTAGRAM</a>
+        <a
+          class="mast-like-footer__instagram"
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ARE.NA
+        </a>
 
+        </a>
+
+        <form class="mast-like-footer__subscribe" id="footer-subscribe-form" novalidate>
+          <label class="sr-only" for="footer-subscribe-email">Subscribe to our mailing list</label>
+          <input
+            id="footer-subscribe-email"
+            name="email"
+            type="email"
+            placeholder="SUBSCRIBE TO OUR MAILING LIST"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" aria-label="Submit email subscription">&#8599;</button>
+        </form>
+
+        <div class="mast-like-footer__message" id="footer-subscribe-message" aria-live="polite"></div>
+      </div>
+
+      <div class="mast-like-footer__copyright">© 2026 TABLE SERVICE</div>
+      <a class="mast-like-footer__terms" href="/terms">TERMS</a>
+    </div>
   </div>
+</footer>
+
 
 </div>
 
   <!-- JS (IMPORTANT FIX: runs after DOM loads) -->
 <script>
-const nameEl = document.getElementById("name");
-const navEl = document.getElementById("nav");
+  const nameEl = document.getElementById("name");
+  const navEl = document.getElementById("nav");
 
-const maxScroll = 200;
+  const maxScroll = 200;
+  let ticking = false;
 
-function getTargetOffset() {
-  const navRect = navEl.getBoundingClientRect();
-  return navRect.top + navRect.height / 2;
-}
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
 
-window.addEventListener("scroll", () => {
-  const progress = Math.min(window.scrollY, maxScroll) / maxScroll;
+  function getProgress() {
+    return clamp(window.scrollY / maxScroll, 0, 1);
+  }
 
-  const scale = 1 - (0.84 * progress);
+  function getTargetOffset() {
+    const navRect = navEl.getBoundingClientRect();
+    return navRect.top + navRect.height / 2;
+  }
 
-  const targetY = getTargetOffset();
-  const startY = window.innerHeight / 2;
+  function updateNameTransform() {
+    const progress = getProgress();
 
-  const moveY = (targetY - startY) * progress;
+    const scale = 1 - (0.84 * progress);
 
-  nameEl.style.transform =
-    `translateY(${moveY}px) scale(${scale})`;
-});
+    const startY = window.innerHeight / 2;
+    const targetY = getTargetOffset();
+    const moveY = (targetY - startY) * progress;
+
+    nameEl.style.transform = `translate3d(0, ${moveY}px, 0) scale(${scale})`;
+
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateNameTransform);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", requestTick, { passive: true });
+  window.addEventListener("resize", requestTick);
+  window.addEventListener("load", requestTick);
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(requestTick);
+  }
+
+  updateNameTransform();
+
+  const scaleRaw = 1 - (0.84 * progress);
+const scale = Math.round(scaleRaw * 100) / 100;
+
+const moveY = Math.round((targetY - startY) * progress);
+</script>
+
+<script>
+  const footerSubscribeForm = document.getElementById("footer-subscribe-form");
+  const footerSubscribeEmail = document.getElementById("footer-subscribe-email");
+  const footerSubscribeMessage = document.getElementById("footer-subscribe-message");
+
+  footerSubscribeForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const email = footerSubscribeEmail.value.trim();
+
+    if (!email) {
+      footerSubscribeMessage.textContent = "Please enter an email address.";
+      return;
+    }
+
+    try {
+      // invisible note:
+      // Replace "/api/subscribe" with the place you want emails to go.
+      // Common choices:
+      // 1) Your own backend endpoint, e.g. /api/subscribe
+      // 2) Mailchimp embedded form endpoint
+      // 3) Klaviyo list subscribe endpoint
+      // 4) ConvertKit form endpoint
+      // If you use your own backend, store the email in your database
+      // or forward it to your email platform there.
+
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email })
+      });
+
+      if (!response.ok) {
+        throw new Error("Subscription failed");
+      }
+
+      footerSubscribeMessage.textContent = "Thanks for subscribing.";
+      footerSubscribeForm.reset();
+    } catch (error) {
+      footerSubscribeMessage.textContent = "Unable to subscribe right now.";
+    }
+  });
 </script>
 
 </body>

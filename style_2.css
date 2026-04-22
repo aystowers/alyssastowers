@@ -5,7 +5,7 @@ html, body{
     font-family: "Pinyon Script";
     font-weight:300;
 
-background-color: #F9F5FE;
+background-color: white;
 
 }
 
@@ -38,7 +38,7 @@ background-color: #F9F5FE;
 
 @font-face {
   font-family: arrow;
-  src: url(img/arrow.otf);
+  src: url(imgs/arrow.otf);
 }
 
 
@@ -63,83 +63,150 @@ background-color: #F9F5FE;
 
 
 
-@media screen and (min-width:700px){
+@media screen and (min-width:850px){
 
 
-    body {
-      margin: 0;
-  font-family: "Public Sans", sans-serif;
+
+  body {
+    margin: 0;
+    font-family: "Public Sans", sans-serif;
     font-weight: 300;
-    }
+  }
 
-    /* ================= NAV ================= */
+  /* ================= NAV ================= */
+  #nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    #nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding-top: 20px;
-      padding-left: 30px;
-      padding-right: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-bottom: 16px;
-      box-sizing: border-box;
+    box-sizing: border-box;
 
-      font-size: 20px;
-      text-transform: uppercase;
+    font-size: 18px;
+    text-transform: uppercase;
 
-      z-index: 1000;
-background-color: #F9F5FE;
+    z-index: 1000;
+    background-color: #FFFFFF;
+    overflow: visible;
+  }
 
-    }
+  .nav-left,
+  .nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
 
-    .nav-left,
-    .nav-right {
-      display: flex;
-      gap: 20px;
-    }
+  #nav a {
+    text-decoration: none;
+    color: black;
+  }
 
-    #nav a {
-      text-decoration: none;
-      color: black;
-    }
+  .nav-left {
+    position: relative;
+  }
 
-    /* ================= HEADER ================= */
+  .nav-item {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-trigger {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+  }
+
+  .dropdown {
+    position: absolute;
+    left: -14px;
+    top: calc(100% + 2px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    min-width: 150px;
+    padding: 16px 0px 24px 15px;
+    box-sizing: border-box;
+
+    background: #fff;
+    white-space: nowrap;
+    z-index: 1001;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.14s ease, visibility 0.14s ease;
+  }
+
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 100%;
+    width: calc(100% + 28px);
+    height: 6px;
+    background: transparent;
+  }
+
+  .nav-item:hover .dropdown,
+  .nav-item:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .dropdown a {
+    display: block;
+  }
+
+  /* ================= HEADER ================= */
+  #name {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 180px;
+    letter-spacing: -0.2px;
+    color: white;
+    mix-blend-mode: exclusion;
+
+    z-index: 1100;
+
+    font-family: "nimbus-sans-l_regular-condensed";
+    text-transform: lowercase;
+
+    transform-origin: center center;
+    will-change: transform;
+
+    /* critical fix */
+    pointer-events: none;
+  }
+
+  #name a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    pointer-events: auto;
+  }
 
 #name {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 13vw;
-  letter-spacing: -0.2px;
-
-  color: white;
-  mix-blend-mode: exclusion;
-
-  z-index: 1100;
-
-  font-family: 'nimbus-sans-l_regular-condensed';
-  text-transform: lowercase;
-
-  transform-origin: center;
-  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
-
-
-
 
     /* ================= SUBHEADER ================= */
 
@@ -190,6 +257,8 @@ background-color: #F9F5FE;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.4vw;
   margin-top: 7vw; /* space below subheader (matches your old layout) */
+
+  padding-bottom: 28vh;
 }
 
 /* tile container controls height */
@@ -204,6 +273,7 @@ background-color: #F9F5FE;
   height: 100%;
   object-fit: cover;
   display: block;
+
 }
 
 
@@ -214,6 +284,7 @@ background-color: #F9F5FE;
   margin-top: 7px;
 
   font-size: 18px;
+
 }
 
     /* ================= LINKS ================= */
@@ -228,6 +299,229 @@ background-color: #F9F5FE;
     }
 
 
+    /* ================= FOOTER ================= */
+
+ .mast-like-footer {
+    background: #e9e9e9;
+    color: #4a4a4a;
+    padding: 40px 30px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+ 
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .mast-like-footer * {
+    box-sizing: border-box;
+  }
+
+  .mast-like-footer__inner {
+    width: 100%;
+    max-width: 2048px;
+    margin: 0 auto;
+  }
+
+  .mast-like-footer__grid {
+    display: grid;
+    grid-template-columns: 1.9fr 0.62fr 0.52fr 0.72fr;
+    grid-template-areas:
+      "hours contact nav right"
+      "copyright . . terms";
+    column-gap: 72px;
+    row-gap: 48px;
+    align-items: start;
+  }
+
+  .mast-like-footer__hours {
+    grid-area: hours;
+    align-self: start;
+    white-space: nowrap;
+  }
+
+  .mast-like-footer__contact {
+    grid-area: contact;
+  }
+
+  .mast-like-footer__nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mast-like-footer__right {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 330px;
+  }
+
+  .mast-like-footer__copyright {
+    grid-area: copyright;
+    align-self: end;
+    color: #7b7b7b;
+    white-space: nowrap;
+  }
+
+  .mast-like-footer__terms {
+    grid-area: terms;
+    justify-self: end;
+    align-self: end;
+    color: #7b7b7b;
+    white-space: nowrap;
+  }
+
+  .mast-like-footer a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .mast-like-footer a:hover {
+    text-decoration: none;
+    opacity: 0.82;
+  }
+
+  .mast-like-footer__instagram {
+    margin-bottom: 36px;
+    display: inline-block;
+  }
+
+  .mast-like-footer__subscribe {
+    width: 100%;
+    max-width: 330px;
+    height: 45px;
+    border: 1px solid #575757;
+    display: grid;
+    grid-template-columns: 1fr 44px;
+    align-items: stretch;
+    background: transparent;
+  }
+
+  .mast-like-footer__subscribe input {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: transparent;
+    color: #4a4a4a;
+    font: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    padding: 0 14px;
+    outline: none;
+  }
+
+  .mast-like-footer__subscribe input::placeholder {
+    color: #4a4a4a;
+    opacity: 1;
+  }
+
+  .mast-like-footer__subscribe button {
+    width: 44px;
+    height: 100%;
+    border: 0;
+    border-left: 0;
+    background: transparent;
+    color: #4a4a4a;
+    font: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .mast-like-footer__message {
+    min-height: 18px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+    text-transform: none;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 1400px) {
+    .mast-like-footer__grid {
+      grid-template-columns: 1.3fr 0.8fr 0.7fr 0.9fr;
+      column-gap: 48px;
+    }
+
+    .mast-like-footer__right {
+      min-width: 290px;
+    }
+
+    .mast-like-footer__subscribe {
+      max-width: 290px;
+    }
+  }
+
+  @media (max-width: 980px) {
+    .mast-like-footer {
+      padding: 48px 22px 28px;
+    }
+
+    .mast-like-footer__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "hours contact"
+        "nav right"
+        "copyright terms";
+      column-gap: 34px;
+      row-gap: 40px;
+    }
+
+    .mast-like-footer__terms {
+      justify-self: start;
+    }
+
+    .mast-like-footer__right {
+      min-width: 0;
+    }
+
+    .mast-like-footer__subscribe {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .mast-like-footer__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "hours"
+        "contact"
+        "nav"
+        "right"
+        "copyright"
+        "terms";
+      row-gap: 28px;
+    }
+
+    .mast-like-footer__terms {
+      justify-self: start;
+    }
+
+    .mast-like-footer__right {
+      width: 100%;
+    }
+
+  }
+
+
+
+/*
 
 #footer {
   margin-top: 120px;
@@ -241,7 +535,7 @@ background-color: #F9F5FE;
   font-family: 'Helvetica';
 }
 
-/* LEFT + RIGHT layout */
+/* LEFT + RIGHT layout 
 .footer-left {
   max-width: 320px;
 }
@@ -251,12 +545,12 @@ background-color: #F9F5FE;
   gap: 60px;
 }
 
-/* blocks */
+/* blocks 
 .footer-block {
   margin-bottom: 40px;
 }
 
-/* labels (small caps feel) */
+/* labels (small caps feel) 
 .footer-label {
   font-size: 11px;
   letter-spacing: 1px;
@@ -264,13 +558,13 @@ background-color: #F9F5FE;
   margin-bottom: 8px;
 }
 
-/* regular text */
+/* regular text 
 .footer-text {
   font-size: 14px;
   line-height: 1.4;
 }
 
-/* right columns */
+/* right columns 
 .footer-col {
   display: flex;
   flex-direction: column;
@@ -278,7 +572,7 @@ background-color: #F9F5FE;
   font-size: 14px;
 }
 
-/* links */
+/* links 
 #footer a {
   text-decoration: none;
   color: inherit;
@@ -288,7 +582,7 @@ background-color: #F9F5FE;
   color: pink;
 }
 
-/* ================= NEWSLETTER ================= */
+/* ================= NEWSLETTER ================= 
 
 .newsletter {
   display: flex;
@@ -317,14 +611,11 @@ background-color: #F9F5FE;
   text-align: left;
 }
 
-
+*/
 
 }
-@media screen and (max-width: 699px) and (min-width: 20px){
+@media screen and (max-width: 849px) and (min-width: 20px){
 
 
     
-
-
-
-}
+    }
