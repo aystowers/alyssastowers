@@ -953,11 +953,11 @@ background-color: white;
     font-family: "nimbus-sans-l_regular-condensed";
     text-transform: lowercase;
     transform-origin: center center;
-    will-change: transform;
+    will-change: auto;
     pointer-events: none;
     -webkit-font-smoothing: antialiased;
     backface-visibility: hidden;
-    transform: translateZ(0);
+    transform: none !important;
     text-align: center;
     padding: 0 16px;
   }
