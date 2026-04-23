@@ -215,19 +215,25 @@
     return navRect.top + navRect.height / 2;
   }
 
-  function updateNameTransform() {
-    const progress = getProgress();
-
-    const scale = 1 - (0.84 * progress);
-
-    const startY = window.innerHeight / 2;
-    const targetY = getTargetOffset();
-    const moveY = (targetY - startY) * progress;
-
-    nameEl.style.transform = `translate3d(0, ${moveY}px, 0) scale(${scale})`;
-
+function updateNameTransform() {
+  if (window.innerWidth <= 599) {
+    nameEl.style.transform = "none";
     ticking = false;
+    return;
   }
+
+  const progress = getProgress();
+
+  const scale = 1 - (0.84 * progress);
+
+  const startY = window.innerHeight / 2;
+  const targetY = getTargetOffset();
+  const moveY = (targetY - startY) * progress;
+
+  nameEl.style.transform = `translate3d(0, ${moveY}px, 0) scale(${scale})`;
+
+  ticking = false;
+}
 
   function requestTick() {
     if (!ticking) {
